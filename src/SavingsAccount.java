@@ -14,6 +14,18 @@ public class SavingsAccount extends Account {
     Use assertions.
      */
 
+    public void withdraw(double amount, double fee) {
+        double total = amount + fee;
+        assert total < balance;
+
+        balance -= total;
+    }
+        
+    public void deposit(double amount) {
+        assert amount > 0;
+        balance += amount;
+    }
+
     public double getInterestRate() {
         return interestRate;
     }

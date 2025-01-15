@@ -16,6 +16,17 @@ public abstract class Account {
 
     public abstract void withdraw(double amount) throws InsufficientFundsException;
 
+    public void withdraw(double amount, double fee) {
+        double total = amount + fee;
+        try {
+            balance -= total;
+        } catch (InsufficientFundsException e) {
+
+            e.printStackTrace();
+        }
+        }
+    
+
     // Overload withdraw method to accept an additional fee parameter (withdraw(double amount, double fee)):
     // Withdraw the given amount plus the fee. Use assertions and handle
     // exceptions properly.
@@ -34,4 +45,17 @@ public abstract class Account {
 
     // Override the toString() method to provide a string representation of the account.
 
+    @Override
+    public String toString() {
+        StringBuilder str = new StringBuilder();
+
+        str.append("Account Number: ");
+        str.append(accountNumber);
+        str.append("\n Account Holder: ");
+        str.append(accountHolder);
+        str.append("\n Balance: ");
+        str.append(balance);
+
+        return str.toString();
+    }
 }

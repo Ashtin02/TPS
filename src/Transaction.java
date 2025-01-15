@@ -14,3 +14,27 @@ If the amount is negative, it should withdraw the amount. Handle exceptions prop
 Add an overloaded execute() method that takes an additional fee parameter for withdrawal
 transactions.
  */
+
+import java.io.EOFException;
+
+public class Transaction<T extends Account> {
+    T account;
+    double transactionAmount;
+
+    Transaction(T account, double transactionAmount) {
+        this.account = account;
+        this.transactionAmount = transactionAmount;
+    }
+}
+
+//     public void execute(){
+//         if (transactionAmount > 0) {
+//             account.balance += transactionAmount; 
+//         } else {
+//             if (Math.abs(transactionAmount) > account.balance) {
+                
+//             }
+//         }
+//     }
+
+//  }
