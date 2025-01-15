@@ -16,14 +16,13 @@ public abstract class Account {
 
     public abstract void withdraw(double amount) throws InsufficientFundsException;
 
-    public void withdraw(double amount, double fee) {
+    public void withdraw(double amount, double fee) throws InsufficientFundsException{
         double total = amount + fee;
-        try {
+       if (total > balance) {
+            throw new InsufficientFundsException("No money");
+        } else {
             balance -= total;
-        } catch (InsufficientFundsException e) {
-
-            e.printStackTrace();
-        }
+       }
         }
     
 
@@ -57,5 +56,6 @@ public abstract class Account {
         str.append(balance);
 
         return str.toString();
+
     }
 }

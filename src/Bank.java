@@ -22,7 +22,7 @@ public class Bank<T extends Account> {
     }
 
     // Get total balance across all accounts
-    public double getTotalBalance() {
+    public double getTotalBalance(List<T> accounts) {
         double total = 0;
         for (T account : accounts) {
             total += account.getBalance();
@@ -45,7 +45,8 @@ public class Bank<T extends Account> {
         }
     }
 
-    // Overload the performTransaction method to allow for transactions with additional
+    // Overload the performTransaction method to allow for transactions with
+    // additional
     // parameter fees to handle fees when a withdrawal is happening.
 
     public void performTransaction(T account, double amount, double fees) {
@@ -63,7 +64,7 @@ public class Bank<T extends Account> {
     }
 
     // List all accounts in the bank
-    public void listAccounts() {
+    public void listAccounts(List<T> accounts) {
         System.out.println("Accounts in the Bank:");
         for (T account : accounts) {
             System.out.println(account);
@@ -74,7 +75,7 @@ public class Bank<T extends Account> {
     // balance across all accounts.
     // Use a generic wildcard to represent the account types totaling from.
 
-    public double totalBalance() {
+    public double calculateTotalBalance() {
         double total = 0;
         for (T account : accounts) {
             total += account.balance;

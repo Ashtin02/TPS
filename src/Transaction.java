@@ -25,16 +25,16 @@ public class Transaction<T extends Account> {
         this.account = account;
         this.transactionAmount = transactionAmount;
     }
-}
 
-//     public void execute(){
-//         if (transactionAmount > 0) {
-//             account.balance += transactionAmount; 
-//         } else {
-//             if (Math.abs(transactionAmount) > account.balance) {
+
+    public void execute(){
+        if (transactionAmount > 0) {
+            account.balance += transactionAmount; 
+        } else {
+            if (Math.abs(transactionAmount) > account.balance) {
                 
-//             }
-//         }
-//     }
+            }
+        }
+    }
 
-//  }
+ }

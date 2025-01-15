@@ -14,8 +14,8 @@ public class CheckingAccount extends Account {
     Use assertions.
      */
 
-    public void withdraw(double amount, double fee) {
-        double total = amount + fee;
+    public void withdraw(double amount) {
+        double total = amount;
 
         assert total < overdraftLimit;
 
